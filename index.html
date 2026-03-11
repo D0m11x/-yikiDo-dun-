@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>İyikiDoğdun!</title>
+
+<style>
+
+body{
+background:rgb(0, 0, 0);
+margin:0;
+font-family:serif;
+overflow:hidden;
+color:white;
+text-align:center;
+}
+
+/* başlık */
+
+.title{
+margin-top:40px;
+font-size:50px;
+color:#dfc5c5;
+}
+
+.strike{
+text-decoration:line-through;
+opacity:0.6;
+}
+
+/* japonca yazı */
+
+.jp{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:40px;
+color:rgba(255,255,255,0.1);
+white-space:nowrap;
+pointer-events:none;
+}
+
+/* kalpler */
+
+.heart{
+position:fixed;
+top:-10px;
+font-size:20px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh)}
+100%{transform:translateY(110vh)}
+}
+
+/* arka plan foto */
+
+.bgphoto{
+position:fixed;
+top:30%;
+left:-200px;
+opacity:0.2;
+animation:float 40s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateX(0)}
+100%{transform:translateX(120vw)}
+}
+
+/* fotoğraflar */
+
+.gallery{
+margin-top:80px;
+}
+
+.gallery img{
+width:220px;
+margin:20px;
+cursor:pointer;
+border-radius:10px;
+}
+
+/* popup */
+
+.popup{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:rgb(77, 76, 76);
+padding:30px;
+width:300px;
+display:none;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="title">
+𝓗𝓐𝓟𝓟𝓨 <span class="strike">28</span> 𝟏𝟖𝓣𝓗 𝓑İ𝓡𝓣𝓗𝓓𝓐𝓨!
+</div>
+
+<div class="title"></div>
+<h1 style="margin-top:0px; color:#695757;">
+𝒶𝓁𝓉𝓉𝒶𝓀𝒾 𝓅𝒶𝓈𝓉𝒶𝓎𝒶 𝓋𝑒 𝒽𝑒𝒹𝒾𝓎𝑒𝓃𝑒 𝓉ı𝓀𝓁𝒶!
+</h1>
+
+</div>
+
+<!-- arka plan foto -->
+
+<img src="" class="bgphoto">
+
+<!-- fotoğraflar -->
+
+
+
+<img src="cake-removebg-preview.png" width="450" onclick="openNote()" id="bigphoto">
+
+<script id="3r9q7b">
+document.getElementById("bigphoto").style.marginTop = "150px";
+</script>
+
+</td>
+</tr>
+</table>
+
+</div>
+<img src="">
+</div>
+
+<!-- not -->
+
+<div class="popup" id="note">SELAM BALIMM!! doğum günün kutlu olsun artık 18 yaşındasın iyiki doğmuşsunn seninle karşılaştığım için çok mutluyum hep yanımda olmanı dilerdim böylece hep sana sarılır seni öpebilirdim..dürüst olmak gerekirse 40 yaşında bile olsan gözümde asla değişemezsin seni çok seviyorumm!!! hediyeni açtıktan sonra ınstagram chatine bak :3
+<br><br>
+<button onclick="closeNote()">kapat</button>
+</div>
+
+<script>
+
+function openNote(){
+document.getElementById("note").style.display="block";
+}
+
+function closeNote(){
+document.getElementById("note").style.display="none";
+}
+
+/* kalpler */
+
+for(let i=0;i<30;i++){
+let heart=document.createElement("div")
+heart.className="heart"
+heart.innerHTML=Math.random()>0.5?"🔪":"💕"
+heart.style.left=Math.random()*100+"vw"
+heart.style.animationDuration=(5+Math.random()*10)+"s"
+document.body.appendChild(heart)
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+<img id="scare" src="WhatsApp Image 2026-03-11 at 18.45.59.jpeg"
+onclick="closeScare()"
+style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999;">
+
+<script>
+
+function jumpscare(){
+
+var scare = document.getElementById("scare");
+
+scare.style.display = "block";
+
+var sayac = 0;
+
+var titreme = setInterval(function(){
+
+document.body.style.transform =
+"translate(" + (Math.random()*40-20) + "px," +
+(Math.random()*40-20) + "px)";
+
+sayac++;
+
+if(sayac > 40){
+clearInterval(titreme);
+document.body.style.transform = "translate(0,0)";
+}
+
+},30);
+
+}
+
+function closeScare(){
+
+document.getElementById("scare").style.display = "none";
+
+}
+
+</script>
+
+
+<!-- Tıklanacak fotoğraf -->
+<img src="https___t_me_nemonarkhiya-removebg-preview.png" width="400" height="500" onclick="jumpscare()">
+
+<!-- Jumpscare fotoğrafı -->
+<img id="scare" src="WhatsApp Image 2026-03-11 at 18.45.59.jpeg"
+onclick="closeScare()"
+style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999;">
+
+<!-- Jumpscare sesi -->
+<audio id="scareSound" src="WhatsApp Audio 2026-03-11 at 18.38.09.mpga"></audio>
+
+<!-- Script -->
+<script>
+function jumpscare(){
+  var scare = document.getElementById("scare");
+  var sound = document.getElementById("scareSound");
+
+  // Fotoğrafı göster ve sesi çal
+  scare.style.display = "block";
+  sound.play();
+
+  // Titreme efekti
+  var sayac = 0;
+  var titreme = setInterval(function(){
+    document.body.style.transform =
+    "translate(" + (Math.random()*40-20) + "px," +
+    (Math.random()*40-20) + "px)";
+    sayac++;
+    if(sayac > 40){
+      clearInterval(titreme);
+      document.body.style.transform = "translate(0,0)";
+    }
+  },30);
+}
+
+function closeScare(){
+  document.getElementById("scare").style.display = "none";
+}
+</script>
+
+<img id="backgroundImg" src="iloveyou.png"
+style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; opacity:0.5;">
+
+
+
+
+
+<!-- Jumpscare sesi -->
+<audio id="scareSound" src="WhatsApp Audio 2026-03-11 at 18.38.09.mpga"></audio>
+
+<!-- Yazılar -->
+<div id="scareText" style="display:none; 
+     position:fixed; top:50%; left:50%; 
+     transform:translate(-50%, -50%);
+     color:#ff0000; font-size:40px; text-align:center; z-index:10000;">
+     BOO!! Stay With Me Forever Silly ♡
+</div>
+
+<script>
+function jumpscare(){
+  var scare = document.getElementById("scare");
+  var sound = document.getElementById("scareSound");
+  var text = document.getElementById("scareText");
+
+  // Jumpscare fotoğrafını göster
+  scare.style.display = "block";
+  sound.play();
+
+  // Titreme efekti
+  var sayac = 0;
+  var titreme = setInterval(function(){
+    document.body.style.transform =
+    "translate(" + (Math.random()*40-20) + "px," +
+    (Math.random()*40-20) + "px)";
+    sayac++;
+    if(sayac > 40){
+      clearInterval(titreme);
+      document.body.style.transform = "translate(0,0)";
+
+      // Titreme bittikten sonra yazıyı göster
+      text.style.display = "block";
+    }
+  },30);
+}
+
+// Fotoğrafa tıklayınca kapatmak istersen
+function closeScare(){
+  document.getElementById("scare").style.display = "none";
+  document.getElementById("scareText").style.display = "none";
+}
+</script>
